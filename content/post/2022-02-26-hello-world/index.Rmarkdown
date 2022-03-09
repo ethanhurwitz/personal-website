@@ -1,0 +1,31 @@
+---
+title: "Hello World"
+author: "Ethan Hurwitz"
+date: '2022-02-26'
+slug: hello-world
+categories: ["R"]
+tags: ["R Markdown", "plot", "regression"]
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2022-02-26T18:35:21-08:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+```{r}
+library(tidyverse)
+glimpse(iris)
+
+iris %>%
+  ggplot(aes(y = Sepal.Length, x = Species, color = Species, fill = Species))+
+  geom_boxplot()+
+  theme_minimal()
+
+
+```
+

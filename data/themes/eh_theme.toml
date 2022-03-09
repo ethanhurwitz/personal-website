@@ -1,0 +1,25 @@
+# Theme metadata
+name = "Hurwitz_Default"
+
+# Is theme light or dark?
+light = true
+
+# Primary
+primary = "#37A5EC" #seems to be main icon color?
+link_hover = "#1b5276"
+
+# Menu
+menu_primary = "#f7f7f7" #Menu bar color
+menu_text_active = "#2673a5" #color of the menu text when clicked on that page
+menu_text = "#000" #menu icons
+menu_title = "#000" #main menu title
+
+# Home sections
+home_section_odd = "#FFF" #background color
+home_section_even = "#d7edfb" #background color
+
+[dark]
+  link = "#37A5EC"
+  link_hover = "#9bd2f5"
+  menu_text_active = "#9bd2f5" #color of the menu text when clicked on that page
+  
