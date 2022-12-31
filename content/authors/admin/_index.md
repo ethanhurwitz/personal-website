@@ -5,7 +5,7 @@ education:
   - course: Ph.D., Experimental Psychology
     institution: University of California, San Diego
     year: Expected 2024
-  - course: M.S., Experimental Psychology
+  - course: M.A., Experimental Psychology
     institution: University of California, San Diego
     year: 2019
   - course: B.S., Psychology
