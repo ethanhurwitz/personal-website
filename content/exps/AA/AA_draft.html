@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SONA experiment</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://timbrady.org/turk/TimTurkTools.js"></script>
+<script src="https://www.ethanhurwitz.com/jsPsych/jspsych-6.3.1/jspsych.js"></script>
+<script src="https://www.ethanhurwitz.com/jsPsych/jspsych-6.3.1/plugins/jspsych-html-keyboard-response.js"></script>
+<script src="https://www.ethanhurwitz.com/jsPsych/jspsych-6.3.1/plugins/jspsych-html-button-response.js"></script>
+<script src="https://www.ethanhurwitz.com/jsPsych/jspsych-6.3.1/plugins/jspsych-image-keyboard-response.js"></script>
+<!-- <script src="https://www.ethanhurwitz.com/jsPsych/jspsych-6.3.1/plugins/jspsych-survey-multi-choice.js"></script> -->
+<script src="https://www.ethanhurwitz.com/jsPsych/jspsych-6.3.1/plugins/jspsych-survey-multi-choice2.js"></script>
+<!-- <script src="https://www.ethanhurwitz.com/jsPsych/jspsych-6.3.1/plugins/jspsych-survey-multi-select.js"></script> -->
+<script src="https://www.ethanhurwitz.com/jsPsych/jspsych-6.3.1/plugins/jspsych-survey-multi-select2.js"></script>
+<script src="https://www.ethanhurwitz.com/jsPsych/jspsych-6.3.1/plugins/jspsych-video-button-response.js"></script>
+<script src="https://www.ethanhurwitz.com/jsPsych/jspsych-6.3.1/plugins/jspsych-survey-text.js"></script>
+<script src="https://www.ethanhurwitz.com/jsPsych/jspsych-6.3.1/plugins/jspsych-survey-html-form.js"></script>
+<script src="https://www.ethanhurwitz.com/jsPsych/jspsych-6.3.1/plugins/jspsych-preload.js"></script>
+<script src="https://www.ethanhurwitz.com/jsPsych/jspsych-6.3.1/plugins/jspsych-html-slider-response.js"></script>
+<link href="https://www.ethanhurwitz.com/jsPsych/jspsych-6.3.1/css/jspsych.css" rel="stylesheet" type="text/css"></link>
+<!-- <script src="https://www.ethanhurwitz.com/jsPsych/jspsych-6.1.0/plugins/jspsych-free-sort_update2.js"></script> -->
+<script src="https://www.ethanhurwitz.com/jsPsych/jspsych-6.1.0/plugins/jspsych-free-sort-NEW_updated.js"></script>
+<script src="https://www.ethanhurwitz.com/jsPsych/jspsych-6.1.0/plugins/jspsych-survey-html-form.js"></script>
+<script src="https://www.ethanhurwitz.com/jsPsych/jspsych-6.3.1/plugins/jspsych-html-keyboard-response.js"></script>
+
+<style>
+    .block {
+        height: 200px;
+        width: 200px;
+    }
+</style>
+</head>
+  
+  <body>
+    <script>
+
+var randCode = "AA" + Math.round(Math.random()*1000) + "69" + Math.round(Math.random()*1000);
+
+Shuffle = function (o) {
+    for (var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+};
+
+var startTime = new Date();
+
+var timeline = [];
+
+var preload = {
+    type: 'preload',
+    images: ['https://www.ethanhurwitz.com/exps/AA/B_BP.png',
+    'https://www.ethanhurwitz.com/exps/AA/B_BS.png',
+    'https://www.ethanhurwitz.com/exps/AA/B_WP.png',
+    'https://www.ethanhurwitz.com/exps/AA/B_WS.png',
+    'https://www.ethanhurwitz.com/exps/AA/Y_BP.png',
+    'https://www.ethanhurwitz.com/exps/AA/Y_BS.png',
+    'https://www.ethanhurwitz.com/exps/AA/Y_WP.png',
+    'https://www.ethanhurwitz.com/exps/AA/Y_WS.png',],
+    video: ['https://www.ethanhurwitz.com/exps/AA/Intro.mp4',
+    'https://www.ethanhurwitz.com/exps/AA/BP_NotZaff.mp4',
+    'https://www.ethanhurwitz.com/exps/AA/BS_NotZaff.mp4',
+    'https://www.ethanhurwitz.com/exps/AA/WP_NotZaff.mp4',
+    'https://www.ethanhurwitz.com/exps/AA/WS_NotZaff.mp4',
+    'https://www.ethanhurwitz.com/exps/AA/BP_Zaff.mp4',
+    'https://www.ethanhurwitz.com/exps/AA/BS_Zaff.mp4',
+    'https://www.ethanhurwitz.com/exps/AA/WP_Zaff.mp4',
+    'https://www.ethanhurwitz.com/exps/AA/WS_Zaff.mp4'],
+    message: '<p>Please wait while the files load.<br>This could take a minute or so.</p>',
+    continue_after_error: true,
+    max_load_time: 60000,
+    on_error: function(file) {
+      console.log('Error: ',file);
+    },
+    on_success: function(file) {
+      console.log('Loaded: ',file);
+    }
+  };
+
+timeline.push(preload);
+
+var after_preload = {
+type: 'html-button-response',
+stimulus: function() {
+    var message;
+    // if continue_after_error is true in your preload trial, then you can check the trial
+    // data to see if preloading was successful
+    var preload_trial_data = jsPsych.data.getLastTrialData().values()[0];
+    if (preload_trial_data.success) {
+    message = '<p>All files loaded successfully! Ready to continue.</p>';
+    } else {
+    message = '<p>There was a problem loading one or more files. Please refresh to try again.</p>'+
+        '<p>The files that failed to load are listed in the data for the previous trial.</p>';
+    }
+    return message;
+},
+choices: ['Continue']
+};
+
+timeline.push(after_preload);
+
+var consent = {
+  type: 'html-button-response',
+  stimulus: 'Please read the consent form below and click "I agree" below to consent and begin the study.'+
+  '<iframe src="https://www.ethanhurwitz.com/151866_AdultConsent_clean.pdf#toolbar=0" width="100%" height="500px">'+
+    '</iframe>',
+  choices: ["I agree"],
+  data: {exp: 'AA',
+      type: "consent"}
+};
+
+timeline.push(consent);
+
+var blocks = ['BP', 'WP', 'BS', 'WS'];
+
+var nonZaff = jsPsych.randomization.sampleWithoutReplacement(blocks, 1);
+
+var firstSetOrder = [];
+
+var temp = Shuffle([jsPsych.randomization.sampleWithoutReplacement($(blocks).not(nonZaff).get(), 1)[0], nonZaff[0]]);
+
+firstSetOrder.push(jsPsych.randomization.sampleWithoutReplacement($(blocks).not(temp).get(), 1)[0]);
+
+firstSetOrder.push(temp[0], temp[1]);
+
+firstSetOrder.push(jsPsych.randomization.sampleWithoutReplacement($(blocks).not(firstSetOrder).get(), 1)[0]);
+
+console.log(nonZaff);
+console.log(firstSetOrder);
+
+secondSetOrder = Shuffle(blocks);
+thirdSetOrder = Shuffle(blocks);
+fourthSetOrder = Shuffle(blocks);
+
+// "participants were asked to guess the category of each object (zaff or non-zaff) after they chose to 
+// approach or avoid the object but before they saw the outcome. Because these are the first four trials of 
+// the task, each guess is made in the absence of any direct evidence about the particular object type the 
+// participant is considering. As a result, these guesses reflect the initial inferences participants draw 
+// about each object type, before they have any direct evidence about whether that object type is a zaff."
+
+var instr1 = {
+  type: 'html-button-response',
+  stimulus: "Thank you for your participation in our experiment! In this task, you'll be playing a game."+
+  "<br>We also play this game with young children, so it may seem simple or silly.<br>"+
+  "We ask that you take this game seriously and try your best.<br>You will be asked to watch several short videos in this task. "+
+  "Please watch all of these videos.<br><br>To view the instructions for the game, please click continue.",
+  choices: ["Continue"],
+  data: {exp: 'AA',
+      type: "consent"}
+};
+
+timeline.push(instr1);
+
+// var instr2 = {
+//     type: 'video-button-response',
+//     stimulus: ['https://www.ethanhurwitz.com/exps/AA/Intro.mp4'],
+//     choices: ['Continue'],
+//     width: 800,
+//     height: 800,
+//     response_allowed_while_playing: false,
+//     // prompt: '<p>Watch the 1-minute video below for the instructions</p>'
+//     prompt: "When you understand the instructions, click Continue to proceed.<br>You will be tested on your comprehension of the instructions."
+// };
+
+// timeline.push(instr2);
+
+// var AC_Zaff = {
+//   type: 'survey-multi-choice',
+//   questions: [
+//     {prompt: "What happens if you decide to put a block on the machine and it is a zaff?", 
+//     options: ["Gain one star","Lose two stars", "Neither gain nor lose stars"], 
+//     values: ["Correct", "Incorrect", "Incorrect"], 
+//     required: true, 
+//     horizontal: false, 
+//     name: 'AC_Zaff'}
+//   ],
+//   data: {
+// 			type: "AC_Zaff"}
+// };
+
+// timeline.push(AC_Zaff);
+
+// var AC_NonZaff = {
+//   type: 'survey-multi-choice',
+//   questions: [
+//     {prompt: "What happens if you decide to put a block on the machine and it is a zaff?", 
+//     options: ["Gain one star","Lose two stars", "Neither gain nor lose stars"], 
+//     values: ["Incorrect", "Correct", "Incorrect"], 
+//     required: true, 
+//     horizontal: false, 
+//     name: 'AC_NonZaff'}
+//   ],
+//   data: {
+// 			type: "AC_NonZaff"}
+// };
+
+// timeline.push(AC_NonZaff);
+
+// var AC_None = {
+//   type: 'survey-multi-choice',
+//   questions: [
+//     {prompt: "What happens if you decide to put a block on the machine and it is a zaff?", 
+//     options: ["Gain one star","Lose two stars", "Neither gain nor lose stars"], 
+//     values: ["Incorrect", "Incorrect", "Correct"], 
+//     required: true, 
+//     horizontal: false, 
+//     name: 'AC_None'}
+//   ],
+//   data: {
+// 			type: "AC_None"}
+// };
+
+// timeline.push(AC_None);
+
+// var transition = {
+//   type: 'html-button-response',
+//   stimulus: "When you're sure that you understand the rules and are ready to begin the game, click 'Continue' to begin.", 
+//   choices: ["Continue"], 
+//   name: 'transition',
+//   data: {
+// 			type: "transition"}
+// };
+
+// timeline.push(transition);
+
+//test
+//test
+timeline.push({
+  type: 'html-keyboard-response',
+  stimulus: '<<<<<',
+  choices: ['f','j'],
+  prompt: 'Press f for left. Press j for right.',
+  on_finish: function(data){
+    // score the response by comparing the key that was pressed (data.response) against the 
+    // correct response for this trial ('f'), and store reponse accuracy in the trial data
+    
+    if(data.response == "f"){
+        console.log('f')
+    }
+    
+    if(jsPsych.pluginAPI.compareKeys(data.response, 'f')){
+      data.correct = true;
+    } else {
+      data.correct = false; 
+    }
+  }
+})
+//test
+//test
+
+
+// Test trials -- first set:
+
+for (i=0; i<4; i++){
+
+    timeline.push(
+        {type: 'survey-multi-choice',
+    questions: [{
+        prompt: "Would you like to put this block on the machine?<br><br>"+
+        `<img class='block' src='https://www.ethanhurwitz.com/exps/AA/Y_${firstSetOrder[i]}.png'>`,
+        options: ["Yes, put the block on the machine", "No, put the block away without testing"],
+        values: ["Approach", "Avoid"],
+        required: true,
+        horizontal: true,
+        name: `testTrial${i}`}],
+        data: {
+            type: `testTrial${i}`,
+            trialSet: 1,
+            block: firstSetOrder[i],
+            badBlock: nonZaff
+        },
+        on_finish: function(data){
+
+            console.log(Object.values(data.response)[0])
+            console.log(data.block)
+            console.log(data.badBlock)
+            
+            if(Object.values(data.response)[0] == "Yes, put the block on the machine"){
+                data.AA = 1
+            } else {
+                data.AA = 0
+            }
+            console.log(data.AA)
+
+            // if(jsPsych.pluginAPI.compareKeys(data.block, data.badBlock)){
+            // data.valence = 0;
+            // } else {
+            // data.valence = 1;
+            // }
+
+            // if(jsPsych.pluginAPI.compareKeys(data.response, "Approach")){
+            // data.AA = 1;
+            // } else {
+            // data.AA = 0;
+            // }
+
+            // if(jsPsych.pluginAPI.compareKeys(data.AA, data.valence)){
+            // data.win = true;
+            // } else {
+            // data.win = false;
+            // }
+
+
+
+            
+  }
+    }
+    )};
+
+
+
+// 
+// 
+// 
+// var introloop = [];
+
+// var instructioncorrect = false;
+
+// var instructions = {
+//     type: 'survey-multi-choice',
+//     questions: [
+//         {prompt: "What happens if you decide to put a block on the machine and it is a zaff?", 
+//         options: ["Gain one star","Lose two stars", "Neither gain nor lose stars"], 
+//         values: ["Correct", "Incorrect", "Incorrect"], 
+//         required: true, 
+//         horizontal: false, 
+//         name: 'AC_Zaff'}, 
+//         {prompt: "What happens if you decide to put a block on the machine and it is not a zaff?", 
+//         options: ["Gain one star","Lose two stars", "Neither gain nor lose stars"], 
+//         values: ["Incorrect", "Correct", "Incorrect"], 
+//         required: true, 
+//         horizontal: false, 
+//         name: 'AC_NonZaff'},
+//         {prompt: "What happens if you decide not to put a block on the machine?", 
+//         options: ["Gain one star","Lose two stars", "Neither gain nor lose stars"], 
+//         values: ["Incorrect", "Incorrect", "Correct"], 
+//         required: true, 
+//         horizontal: false, 
+//         name: 'AC_None'}
+//     ],
+//     randomize_question_order: true,
+//     data: {type: "Instr_Check"},
+//     on_finish: function(data){
+//     data.answers = JSON.parse(data.responses)
+
+//     if(data.answers.AC_Zaff == "Correct") {
+//       data.AC_Zaff_Correct = true;
+//     } else {
+//       data.AC_Zaff_Correct = false;
+//     }
+//     if(data.answers.AC_NonZaff == "Correct") {
+//       data.AC_NonZaff_Correct = true;
+//     } else {
+//       data.AC_NonZaff_Correct = false;
+//     } 
+//     if(data.answers.AC_None == "Correct") {
+//       data.AC_None_Correct = true;
+//     } else {
+//       data.AC_None_Correct = false;
+//     }
+//     data.NumCorrectAnswers = data.AC_Zaff_Correct + data.AC_NonZaff_Correct + data.AC_None_Correct
+
+//     if(data.NumCorrectAnswers == 3){
+//       action = false;
+//       instructioncorrect = true;
+//     }
+//   }
+// };
+
+// introloop.push(instructions);
+
+// var showsplashscreen = true;
+
+// var splash_screen = {
+//   type: 'html-button-response',
+//   stimulus: "Sorry, at least one of your answers were incorrect. Click the button below to return to the instructions page and try again.",
+//   choices: ["Return"],
+//   data: {type: "InstructionsFail"}
+// };
+
+// var conditional_splash = {
+//   timeline: [splash_screen],
+//   conditional_function: function(data){
+//       return !instructioncorrect
+//   }
+// };
+
+// introloop.push(conditional_splash);
+
+// // loop_node = {
+// var loop_node = {
+//   timeline: introloop,
+//   loop_function: function(data){
+//     return !instructioncorrect
+//   }
+// };
+
+// timeline.push(loop_node);
+// // 
+// 
+// 
+
+
+// Demographics:
+
+// var demographics = {
+//   type: 'survey-multi-choice',
+//   questions: [
+//     {prompt: "<strong>Are you colorblind?</strong>", options: ["Yes, I am colorblind.","No, I am not colorblind"], values: ["Colorblind", "Not-Colorblind"], required: true, horizontal: false, name: 'Demo_Colorblind'}, 
+//     {prompt: "<strong>What gender do you identify as?</strong>", options: ["Male", "Female", "Additional gender category/identity not listed", "Prefer not to answer"], values: ["Male", "Female", "Other", "No-Answer"], required: true, horizontal: false, name: 'Demo_Gender'},
+//     {prompt: "<strong>What is your race/ethnicity?</strong>", options: ["Native American or Alaska Native", "Asian", "Pacific Islander", "Black or African American", "White", "Multi-racial / Multi-ethnic", "Other"], values: ["Native", "Asian", "Pacific-Islander", "Black", "White", "Multi", "Other"], required: true, horizontal: false, name: 'Demo_Race'},
+//     {prompt: "<strong>Do you identify as Hispanic or Latino/a?</strong>", options: ["Yes, I identify as either Hispanic or Latino/a","No, I do not identify as either Hispanic or Latino/a"], values: ["Hispanic", "Not-Hispanic"], required: true, horizontal: false, name: 'Demo_Hispanic'}
+//   ],
+//   data: {
+// 			type: "demographics"}
+// };
+
+// timeline.push(demographics);
+
+// var demographics2 = {
+//   type: 'survey-text',
+//   questions: [
+//     {prompt: "What is your current age?", name: 'Age', rows: 1, columns: 2, required: true},
+//     {prompt: "In your own words, please tell us about what you have seen, and what you had to do, in this study so far:", name: 'ParticipationSummary', rows: 10, columns: 70, required: true}, 
+//     {prompt: "If you had to guess, what do you think this study was about?", name: 'MotivationGuess', rows: 10, columns: 70, required: true}, 
+//     {prompt: "During your participation, did you encounter any issues or technical difficulties?", name: 'TechnicalIssues', rows: 10, columns: 70, required: true}
+//   ],
+//   data: {
+// 			type: "demographics2"}
+// };
+
+// timeline.push(demographics2);
+
+
+jsPsych.data.addProperties({userAgent: navigator.userAgent,
+	startTime: startTime,
+	randCode: randCode
+});
+
+jsPsych.init({
+      timeline: timeline,
+	  show_progress_bar: true,
+      on_finish: function () {
+			var endTime = new Date();
+			jsPsych.data.addProperties({endTime: endTime});
+            jsPsych.data.displayData();
+			//  SaveData(jsPsych.data.get().csv()); // .json()?
+    }
+    });
+
+    function SaveData(curData) {
+  var dataToServer = {
+    'id': randCode,
+    'experimenter': 'Ethan',
+    'experimentName': 'CogFlex_CD_draft',
+    'curData': curData
+  }; 
+	
+//   $.post("https://madlab.ucsd.edu/mturk/save.php",
+//     dataToServer,
+//     function(data) { 
+// 			var newDoc = document.open("text/html", "replace");
+// 			newDoc.write("All done, thanks! To submit the HIT, paste this code into Turk: " + randCode);
+// 			newDoc.close();
+//     }
+//   ).fail(function(data) { 
+// 			var newDoc = document.open("text/html", "replace");
+// 			newDoc.write("All done, thanks! To submit the HIT, paste this code into Turk: " + randCode);
+// 			newDoc.close();
+// 	});  
+
+
+$.post("https://madlab.ucsd.edu/mturk/save.php",
+    dataToServer,
+    FunctionWhenDoneSaving
+  ).fail(FunctionWhenDoneSaving);
+};
+
+function FunctionWhenDoneSaving() {
+        // var urlToRedirect = "https://ucsd.sona-systems.com/webstudy_credit.aspx?experiment_id=2011&credit_token=47b9328d752c45a7967e8656d63542d0&survey_code=" +
+        // jsPsych.data.getURLVariable('survey_code');
+    //    window.location.href = urlToRedirect;
+      };
+
+
+
+
+    </script>
+  </body>
+</html>

@@ -53,7 +53,7 @@ superuser: true
 title: Ethan Hurwitz
 ---
 
-I am a Ph.D. student in the University of California, San Diego's Psychology Department. Before my graduate studies I worked with Dr. Roland Griffiths at the Johns Hopkins Center for Psychedelic & Consciousness Research. Here at UCSD, I am a member of the [Psychedelics and Health Research Initiative](https://www.phri.ucsd.edu). Psychedelics continue to show promise as a novel therapeutic option for a variety of clinical indications. My work asks: **<u>How?</u>**
+I am a Ph.D. student in the University of California, San Diego's Psychology Department. Before my graduate studies I worked with Dr. Roland Griffiths at the Johns Hopkins Center for Psychedelic & Consciousness Research. Here at UCSD, I am a member of the [Psychedelics and Health Research Initiative](https://phri.ucsd.edu). Psychedelics continue to show promise as a novel therapeutic option for a variety of clinical indications. My work asks: **<u>How?</u>**
 
 I am particularly interested in the role of cognitive flexibility and using cognitive development as a model to bridge the levels of analysis in psychedelic science.
 
