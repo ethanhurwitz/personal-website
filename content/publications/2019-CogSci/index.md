@@ -28,5 +28,8 @@ url_project: ""
 url_slides: ""
 url_source: "https://cogsci.mindmodeling.org/2019/papers/0098/index.html"
 url_video: ""
+links:
+  - name: Study Files
+    url: 'https://osf.io/y8u7t'
 ---
 

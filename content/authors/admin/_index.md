@@ -29,7 +29,7 @@ social:
     header: true
 - icon: cv
   icon_pack: ai
-  link: https://ethanhurwitz.github.io/personal-CV/Hurwitz_cv.html
+  link: https://ethanhurwitz.github.io/personal-CV/Hurwitz_cv.pdf
 - icon: github
   icon_pack: fab
   link: https://github.com/ethanhurwitz
