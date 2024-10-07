@@ -53,7 +53,7 @@ superuser: true
 title: Ethan Hurwitz
 ---
 
-I am a postdoctoral researcher in the University of California, San Diego's Psychology Department and [Center for Psychedelic Research](https://cpr.ucsd.edu). Psychedelics continue to show promise as a novel therapeutic option for a variety of clinical indications. My work asks: **<u>How?</u>** I am particularly interested in the role of cognitive flexibility and using cognitive development as a model to bridge the levels of analysis in psychedelic science.
+I am a postdoctoral researcher in the University of California, San Diego Psychology Department and [Center for Psychedelic Research](https://cpr.ucsd.edu). Psychedelics continue to show promise as a novel therapeutic option for a variety of clinical indications. My work asks: **<u>How?</u>** I am particularly interested in the role of cognitive flexibility and using cognitive development as a model to bridge the levels of analysis in psychedelic science.
 
 I am also passionate about pedagogy and enhancing the educational experience for all students, particularly those from marginalized backgrounds. I love creating and redesigning course materials to help students learn more creatively and develop a passion for research and data science.
 
