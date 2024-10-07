@@ -2,9 +2,9 @@
 bio:
 education:
   courses:
-  - course: Ph.D., Experimental Psychology
+  - course: PhD, Experimental Psychology
     institution: University of California, San Diego
-    year: Expected 2024
+    year: 2024
   - course: M.A., Experimental Psychology
     institution: University of California, San Diego
     year: 2019
@@ -20,7 +20,7 @@ interests:
 organizations:
 - name: University of California, San Diego
   url: ""
-role: Experimental Psychology Ph.D., Student
+role: Lecturer and Postdoctoral Researcher
 social:
 - icon: envelope
   icon_pack: fas
@@ -53,11 +53,7 @@ superuser: true
 title: Ethan Hurwitz
 ---
 
-I am a Ph.D. student in the University of California, San Diego's Psychology Department. Before my graduate studies I worked with Dr. Roland Griffiths at the Johns Hopkins Center for Psychedelic & Consciousness Research. Here at UCSD, I am a member of the [Psychedelics and Health Research Initiative](https://phri.ucsd.edu). Psychedelics continue to show promise as a novel therapeutic option for a variety of clinical indications. My work asks: **<u>How?</u>**
-
-I am particularly interested in the role of cognitive flexibility and using cognitive development as a model to bridge the levels of analysis in psychedelic science.
-
-<!--My dissertation work aims to characterize the cognitive mechanisms underlying psychedelic therapy.-->
+I am a postdoctoral researcher in the University of California, San Diego's Psychology Department and [Center for Psychedelic Research](https://cpr.ucsd.edu). Psychedelics continue to show promise as a novel therapeutic option for a variety of clinical indications. My work asks: **<u>How?</u>** I am particularly interested in the role of cognitive flexibility and using cognitive development as a model to bridge the levels of analysis in psychedelic science.
 
 I am also passionate about pedagogy and enhancing the educational experience for all students, particularly those from marginalized backgrounds. I love creating and redesigning course materials to help students learn more creatively and develop a passion for research and data science.
 
