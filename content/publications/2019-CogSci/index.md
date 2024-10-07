@@ -24,9 +24,9 @@ url_code: ""
 url_dataset: ""
 url_pdf: "https://cogsci.mindmodeling.org/2019/papers/0098/0098.pdf"
 url_poster: ""
-url_project: ""
+url_project: "/publications/2019-CogSci/Hurwitz_CogSci2019.pdf"
 url_slides: ""
-url_source: "https://cogsci.mindmodeling.org/2019/papers/0098/index.html"
+url_source: ""
 url_video: ""
 links:
   - name: Study Files
